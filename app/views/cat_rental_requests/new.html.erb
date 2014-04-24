@@ -6,8 +6,8 @@
     <label for="cat_id"> Select yo cat!</label>
     <select name="cat_rental_request[cat_id]">
       <option>SelectCat</option>
-      <% @cats.each do |cat| %>
-        <option value="<%cat.id%>"><%=cat.name%></option>
+      <%= @cats.each do |cat| %>
+        <option value="<%=cat.id%>"><%=cat.name%></option>
       <% end %>
     </select>
 

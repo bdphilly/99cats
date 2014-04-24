@@ -4,11 +4,6 @@ class CatRentalRequestsController < ApplicationController
     render :index
   end
 
-  # def show
-  #   @cat_rental_request = CatRentalRequest.find(params[:id])
-  #   render :show
-  # end
-
   def new
     @cat_rental_request = CatRentalRequest.new
     @cats = Cat.all
@@ -18,7 +13,7 @@ class CatRentalRequestsController < ApplicationController
   def create
     @new_cat_rental_request = CatRentalRequest.new(cat_rental_params)
     if @new_cat_rental_request.save
-      redirect_to cat_rental_requests_url
+      redirect_to cat_url(@new_cat_rental_request.cat_id)
     else
       render :new
     end

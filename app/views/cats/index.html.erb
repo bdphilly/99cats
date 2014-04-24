@@ -1,16 +1,17 @@
-<h1>Hello Cats!</h1>
+<h1 align=center>Hello Cats!</h1>
 
-<table>
+<table align=center>
   <tr>
-    <th> Name </th>
-    <th> Link </th>
+    <th align=center> Name </th><th></th>
+    <th align=center> Link </th>
   </tr>
 <% @cats.each do |cat| %>
  <tr>
-   <td width = 100px>
+   <td align=center>
      <%= cat.name %>
    </td>
-   <td width = 400px>
+   <td width=10px></td>
+   <td align=center>
    <%= link_to "Check out #{cat.name}, it is only #{cat.age} years old!",          cat_path(cat[:id]) %>
    </td>
  </tr>
