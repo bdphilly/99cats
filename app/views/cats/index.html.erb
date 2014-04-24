@@ -1,0 +1,18 @@
+<h1>Hello Cats!</h1>
+
+<table>
+  <tr>
+    <th> Name </th>
+    <th> Link </th>
+  </tr>
+<% @cats.all.each do |cat| %>
+ <tr>
+   <td width = 100px>
+     <%= cat.name %>
+   </td>
+   <td width = 400px>
+   <%= link_to "Check out #{cat.name}, it is only #{cat.age} years old!",          cat_path(cat[:id]) %>
+   </td>
+ </tr>
+<% end %>
+</table>

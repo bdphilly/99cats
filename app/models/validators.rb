@@ -11,8 +11,3 @@ class Validators < ActiveModel::Validator
     end
   end
 end
-
-# class SexValidator < ActiveModel::Validator
-#
-#   end
-# end

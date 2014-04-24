@@ -1,0 +1,16 @@
+<h1>Here is one cat!</h1>
+
+<table>
+  <tr>
+    <th> Attribute </th>
+    <th> Description </th>
+  </tr>
+
+  <% @cat.as_json.each do |key, value| %>
+  <tr>
+    <td><%=key%></td>
+    <td width = 500px align = 'center'><%=value%></td>
+  </tr>
+<%end%>
+
+</table>
