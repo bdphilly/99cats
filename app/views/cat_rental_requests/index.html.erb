@@ -1,0 +1,27 @@
+<h1>Rent a cat!</h1>
+
+
+
+<table>
+  <tr>
+    <th>Cat ID</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+
+  </tr>
+<% @cat_rental_requests.all.each do |cat| %>
+  <tr>
+    <td width=100px align=center>
+      <%=cat.cat_id%>
+    </td>
+    <td width=200px align=center>
+      <%=cat.start_date%>
+    </td>
+    <td width=200px align=center>
+      <%=cat.end_date%>
+    </td>
+
+  </tr>
+
+  <% end %>
+</table>

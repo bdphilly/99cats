@@ -6,12 +6,9 @@ class CatsController < ApplicationController
   end
 
   def show
-    p params[:id]
-    p @cat = Cat.find(params[:id])
-
+    @cat = Cat.find(params[:id])
     render :show
   end
-
 
   def new
     @cat = Cat.new
@@ -40,9 +37,10 @@ class CatsController < ApplicationController
 
 
   private
-  def cat_params
-    cat_attrs = [:name, :age, :sex, :color, :birth_date]
-    params.require(:cat).permit(*cat_attrs)
-  end
+
+    def cat_params
+      cat_attrs = [:name, :age, :sex, :color, :birth_date]
+      params.require(:cat).permit(*cat_attrs)
+    end
 
 end

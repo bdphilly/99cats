@@ -1,52 +1,54 @@
 <%if @cat.persisted?%>
   <form action="/cats/<%=@cat.id%>" method="POST">
-    <input type = "hidden" name = "_method" value = "PATCH">
+    <input type="hidden" name="_method" value="PATCH">
 <%else%>
-    <form action="/cats" method="post">
+    <form action="/cats" method="POST">
 <%end%>
 
-  <label for="name"> Cat's name </label>
-  <input name="cat[name]" value="<%= @cat.name %>" id="name" type = "text">
+  <label for="name">Cat's name</label>
+  <input name="cat[name]" value="<%= @cat.name %>" id="name" type="text">
 
   <br><br>
 
-  <label for="age"> Cat's age </label>
-  <input name="cat[age]" value= "<%= @cat.age %>"  id= "age" type = "number">
+  <label for="age">Cat's age</label>
+  <input name="cat[age]" value="<%= @cat.age %>" id="age" type="number">
 
   <br><br>
 
   <label>Sex</label>
+
   <div>
-
-    <input name = "cat[sex]" id = "sex_m" type = "radio"  value = "M"     <%='checked' if @cat.sex == 'M' %>>
-    <label for = "sex_m"> Male </label>
-    <input name = "cat[sex]" id = "sex_f" type = "radio"  value = "F" <%='checked' if @cat.sex == 'F' %>>
-    <label for = "sex_f"> Female </label>
-
+    <input name="cat[sex]" id ="sex_m" type ="radio" value="M"
+      <%='checked' if @cat.sex == 'M'%>>
+    <label for="sex_m"> Male</label>
+    <input name="cat[sex]" id ="sex_f" type ="radio"  value ="F"
+      <%='checked' if @cat.sex == 'F'%>>
+    <label for="sex_f">Female</label>
   </div>
 
   <br><br>
 
-  <label for = "color"> Cat's color </label>
-  <select name = "cat[color]">
+  <label for="color">Cat's color</label>
+  <select name="cat[color]">
     <option>Select Color</option>
     <option value="black"
-      <%='selected' if @cat.color == 'black' %>>Black</option>
+      <%='selected' if @cat.color == 'black'%>>Black</option>
     <option value="brown"
-      <%='selected' if @cat.color == 'brown' %>>Brown</option>
+      <%='selected' if @cat.color == 'brown'%>>Brown</option>
     <option value="blue"
-      <%='selected' if @cat.color == 'blue' %>>Blue</option>
+      <%='selected' if @cat.color == 'blue'%>>Blue</option>
     <option value="grey"
-      <%='selected' if @cat.color == 'grey' %>>Grey</option>
+      <%='selected' if @cat.color == 'grey'%>>Grey</option>
     <option value="white"
-      <%='selected' if @cat.color == 'white' %>>White</option>
+      <%='selected' if @cat.color == 'white'%>>White</option>
   </select>
 
   <br><br>
 
   <label for="birth_date">Birth date</label>
   <input name="cat[birth_date]" id="birth_date" type="date"
-    value = <%= @cat.birth_date %>></input>
+    value=<%=@cat.birth_date %>>
+  </input>
 
   <br><br>
 
